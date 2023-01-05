@@ -1,0 +1,529 @@
+/*
+    1. Từ ngoài vào trong
+    2. Từ trên xuống dưới
+    3. Tổng quát đến chi tiết   
+ */
+
+/*
+    1. Vị trí
+    2. Kích thước (widgth, height)
+    3. Màu sắc
+    4. Kiểu dáng (fonts ,tròn, vuông, ...)
+*/
+
+/* Reset CSS */
+/* sẽ bị áp dụng tất cả các thẻ */
+*{
+    /* Short Hand */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Lato' sans-serif;
+    src: url(https://fonts.google.com/specimen/Lato);
+}
+
+html{
+    /* làm animation cho cái lúc cuộn */
+    scroll-behavior: smooth;
+}
+
+.clear{
+    clear: both;
+}
+
+body{
+    font-family: 'Lato', Arial, sans-serif;
+}
+/* class chung */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    float: left;
+    padding-right: 8px;
+    padding-left: 8px;
+} 
+
+.col-full{
+    width: 100%;
+}
+
+.col-haft{
+    width: 50%;
+}
+
+.col-third{
+    width: calc(100% / 3);
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+
+.text-center{
+    text-align: center;
+}
+
+ .text-white{
+    color: #fff !important;
+}
+
+.header{
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.nav{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav li{
+    position: relative;
+}
+
+.nav > li{
+    display: inline-block;
+}
+
+/* chỉ tác động tác cấp 1 do sub ở cấp 1 */
+/* a là con trực tiếp của li con của .nav */
+.nav > li > a{
+    color: white;
+    text-transform: uppercase;
+}
+
+/* nếu gọi như vậy sẽ bị kết nối hết toàn bộ div */
+.nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0px 24px;
+    display: block;  
+}
+
+/* đổi màu chữ + màu nền khi di chuột */
+/* có thể gộp 2 lại 
+    .nav > li:hover > a, .nav .sub-nav li:hover
+    bằng dấu phẩy (,)   
+*/
+.nav > li:hover > a{
+    color: black;
+    background-color: #ccc;
+}
+
+/* di chuột vào more để hiển thị ra thêm danh sách */
+.nav li:hover .sub-nav{
+    display: block;
+}
+
+.nav .sub-nav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* cho thanh more dài ra */
+.nav .sub-nav li{
+    width: 100%;
+}
+
+/* đổi màu chữ của a dưới sub-nav */
+.nav .sub-nav a{
+    color: black;
+}
+
+/* đổi màu chữ + màu nền khi di chuột */
+.nav .sub-nav li:hover{
+    color: black;
+    background-color: #ccc;
+}
+
+/* chỉnh dòng nhỏ lại */
+.sub-nav li a {
+    line-height: 38px;
+}
+
+/* thêm hình ảnh từ fonts */
+.ti-angle-down{
+    font-size: 14px;
+}
+ 
+/* css cái search-icon */
+.header .mobile-menu-btn,
+.header .search-btn{
+    float: right;
+    padding: 0px 22px;
+    cursor: pointer;
+    
+}
+.header .menu-icon,
+.header .search-icon{
+    color: white;
+    font-size: 18px;
+    line-height: 46px;
+}
+
+.header .search-btn:hover{
+    color: black;
+    background-color: red;
+}
+
+.header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+.header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+.slider{
+    /* position: relative; */
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url(https://www.ivyboarding.com/w3template/w3images/la.jpg) top center / cover no-repeat;
+}
+
+
+.text-content {
+    /* position: absolute; */
+    left: 50%;
+    text-align: center;
+    padding-bottom: 46px;
+    
+}
+
+.text-heading{
+    text-align: center;
+    padding: 0 32px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.text-decs{
+    color: white;
+    font-weight: 400px;
+    font-weight: bolder;
+}
+
+
+.content .content-section{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0px 112px;
+}
+
+.content .content-heading{
+    text-align: center;
+    font-size: 30px;
+    /* font-weight: 500px; */
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+ .content .content-desc{
+    text-align: center;
+    opacity: 0.5;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.content .about{
+    font-size: 14.5px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.content .member-list{
+    margin-top: 48px;
+}
+
+.content .member-name{
+    font-size: 15px;
+}
+
+.content .member-img{
+    width: 154px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/* tour section */
+.tour-section{
+    margin-top: 16px;
+    background-color: #000;
+}
+
+.tour-ticket{
+    background-color: white;
+    margin-top: 26px;
+    font-size: 16px;
+}
+
+.tour-ticket .sold-out{
+    background-color: #f44336;
+    color: white;
+    padding: 3px 4px;
+    margin-left: 18px;
+}
+
+.tour-ticket .quanlity{
+    float: right;
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.tour-ticket li{
+    list-style-type: none;
+    background-color: white;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+
+/* .place */
+.place-list{
+    /* margin: 32px -8px 48px; */
+    margin-top: 32px;
+}
+
+.place-img{
+    width: 100%;
+    display: block;
+}
+
+.place-img:hover{
+    opacity: 0.6;   
+}
+
+.place-body{
+    font-size: 15px;
+    padding: 16px;
+    background-color: #fff;
+}
+
+.place-title{
+    font-size: 15px;
+    font-weight: 650;
+    margin: 0px 0;
+}
+
+.place-time{
+    margin-top: 15px;
+    opacity: 0.5;
+}
+
+.place-decs{
+    margin: 15px 0;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+
+.place-buybtt{
+    background-color: black;
+    color: white;
+    text-decoration: none;  
+    padding: 8px 16px;
+    border: none;
+}
+
+.place-buybtt:hover{
+    cursor: pointer;
+    background-color: #ccc;
+    color: black;
+}
+
+
+.modal{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.modal-container{
+    position: relative;
+    background-color: white;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease .6s;
+}
+
+.modal-close{
+    position: absolute;
+    right: 0;   
+    top: 0;
+    padding: 15px;
+    color: white;
+}
+
+.modal-close:hover{
+    background-color: #ccc;
+}
+
+.modal .modal-header{
+    background-color: #009688;
+    height: 174px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal .modal-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.modal .modal-input{
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.buy-tickets{
+    background-color: #009688;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+    color: white;
+}
+
+.buy-tickets:hover{
+    opacity: 0.9;
+    color: black;
+    background-color: #ccc;
+}
+
+.modal-fotter{
+    text-align: right;
+    padding: 8px 10px;
+}
+
+.modal-fotter a {
+    color: #2196F3;
+}
+
+/* tạo chuyển động */
+@keyframes modalFadeIn{
+    from {
+        opacity: 0;
+        transform: translateY(-170px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-content{
+    font-family: 'Lato' sans-serif;
+    margin-top: 48px;
+}
+
+.contact-info{
+    width: 50%;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-control{
+    padding: 11px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.form-submit-btt{
+    float: right;
+    width: 72px;
+    height: 38px;
+    font-size: 15px;
+    color: white;
+    background-color: #000;
+    border: 0px solid #000;
+}
+
+.form-submit-btt:hover{
+    cursor: pointer;
+    color: black;
+    background-color: #ccc;
+}
+
+.footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+.footer .social-list{
+    font-size: 24px;
+}
+
+.footer .social-list a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .social-list a:hover{
+    color: rgba(0, 0, 0, 0.6);
+}   
+

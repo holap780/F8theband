@@ -1,0 +1,39 @@
+/* reponsive cho web */
+/* max-width thì nhỏ hơn thì chạy */
+/* min-width thì lớn hơn dk thì chạy */
+
+/* 
+    PC: >= 1024px 
+    Tablet: >= 720px & < 1024px
+    Mobile: < 740px
+*/
+
+/* pc */
+@media(min-width: 1024px){
+
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .content .content-section{
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* mobile */
+@media (max-width: 740px){
+    .header{
+        
+    }
+
+    .header .search-btn{
+        display: none;
+    }
+
+    .nav > li{
+        display: block;
+    }
+
+}
