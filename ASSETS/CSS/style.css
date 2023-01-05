@@ -177,6 +177,15 @@ body{
 .ti-angle-down{
     font-size: 14px;
 }
+
+#header .mobile-menu-btn{
+    position: absolute;
+    float: left;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
  
 /* css cái search-icon */
 #header .mobile-menu-btn,

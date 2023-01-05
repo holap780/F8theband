@@ -291,12 +291,13 @@
 
         // tự động đóng mobile menu
         var menuItems = document.querySelectorAll('.nav li a[href*="#"]');
-        for (var i = 0; i < menuItems.lengthl; i++){
+        // console.log(menuItems)
+        for (var i = 0; i < menuItems.length; i++){
             var menuItem = menuItems[i];
             console.log(this)
-            // menuItem.onclick = function(){
-            //     header.style.height = null;
-            // }
+            menuItem.onclick = function(){
+                header.style.height = null;
+            }
         }
 
 

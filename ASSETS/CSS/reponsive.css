@@ -24,16 +24,27 @@
 
 /* mobile */
 @media (max-width: 740px){
-    #header{
-        
-    }
-
     #header .search-btn{
         display: none;
+    }
+    
+    #header .mobile-menu-btn{
+        display: block;
+    }
+
+    #header > li:first-child{
+        display: inline-block;
+    }
+    
+    .nav{
+        display: block;
     }
 
     .nav > li{
         display: block;
     }
+
+
+
 
 }
