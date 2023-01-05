@@ -10,7 +10,9 @@
 
 /* pc */
 @media(min-width: 1024px){
-
+    #header{
+        overflow: visible;
+    }
 }
 
 /* tablet */
@@ -35,7 +37,7 @@
     #header > li:first-child{
         display: inline-block;
     }
-    
+
     .nav{
         display: block;
     }
