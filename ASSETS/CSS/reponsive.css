@@ -24,11 +24,11 @@
 
 /* mobile */
 @media (max-width: 740px){
-    .header{
+    #header{
         
     }
 
-    .header .search-btn{
+    #header .search-btn{
         display: none;
     }
 

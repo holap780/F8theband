@@ -84,13 +84,17 @@ body{
     color: #fff !important;
 }
 
-.header{
-    height: 46px;
-    background-color: black;
+#main{
+
+}
+
+#header{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    height: 46px;
+    background-color: black;
     z-index: 1;
     overflow: hidden;
 }
@@ -175,30 +179,30 @@ body{
 }
  
 /* css cái search-icon */
-.header .mobile-menu-btn,
-.header .search-btn{
+#header .mobile-menu-btn,
+#header .search-btn{
     float: right;
     padding: 0px 22px;
     cursor: pointer;
     
 }
-.header .menu-icon,
-.header .search-icon{
+#header .menu-icon,
+#header .search-icon{
     color: white;
     font-size: 18px;
     line-height: 46px;
 }
 
-.header .search-btn:hover{
+#header .search-btn:hover{
     color: black;
     background-color: red;
 }
 
-.header .mobile-menu-btn:hover{
+#header .mobile-menu-btn:hover{
     background-color: #ccc;
 }
 
-.header .mobile-menu-btn:hover .menu-icon{
+#header .mobile-menu-btn:hover .menu-icon{
     color: #000;
 }
 

@@ -27,7 +27,7 @@
 <body>
     <div id="main">
         <!-- header -->
-        <div class="header">
+        <div id="header">
             <!-- begin nav -->
             <ul class="nav">
                 <li><a href="#">Home</a></li>
@@ -38,6 +38,7 @@
                     <a href="#">More
                         <i class="ti-angle-down"></i>
                     </a>
+                        <!-- menu khi mở more -->
                         <ul class="sub-nav">
                             <li><a href="#">Merchandise</a></li>
                             <li><a href="#">Extras</a></li>
@@ -272,16 +273,31 @@
 
         //js menu
         // lấy biến header
-        var header = document.getElementsByClassName('header')
+        var header = document.getElementById('header')
         //mobile menu
         var mobileMenu = document.getElementById('mobile-menu')
+        // lấy biến header height
+        var headerHeight = header.clientHeight;
 
-
+        //menu của mobile
         mobileMenu.onclick = function(){
-            
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed){
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
         }
-        
 
+        // tự động đóng mobile menu
+        var menuItems = document.querySelectorAll('.nav li a[href*="#"]');
+        for (var i = 0; i < menuItems.lengthl; i++){
+            var menuItem = menuItems[i];
+            console.log(this)
+            // menuItem.onclick = function(){
+            //     header.style.height = null;
+            // }
+        }
 
 
 
