@@ -130,7 +130,7 @@ body{
 
 /* đổi màu chữ + màu nền khi di chuột */
 /* có thể gộp 2 lại 
-    .nav > li:hover > a, .nav .sub-nav li:hover
+    .nav > li:hover > a, .nav .  li:hover
     bằng dấu phẩy (,)   
 */
 .nav > li:hover > a{
@@ -150,6 +150,7 @@ body{
     min-width: 60px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    list-style-type: none;
 }
 
 /* cho thanh more dài ra */
